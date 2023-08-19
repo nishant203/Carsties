@@ -1,21 +1,24 @@
-import React from "react";
+import React, { use } from "react";
 import { AiOutlineCar } from "react-icons/ai";
 import Search from "./Search";
 import Logo from "./Logo";
-export default function Navbar() {
+import LoginButton from "./LoginButton";
+import { getCurrentUser } from "../actions/authActions";
+import UserActions from "./UserActions";
+
+export default async function Navbar() {
+  const user = await getCurrentUser();
   return (
     <header
       className="
       sticky top-0 z-50 flex justify-between bg-white p-5 items-center text-gray-800 shadow-md
     "
     >
-      <div>
-        <Logo />
-      </div>
-      <div>
-        <Search />
-      </div>
-      <div>Login</div>
+      <Logo />
+
+      <Search />
+
+      {user ? <UserActions user={user} /> : <LoginButton />}
     </header>
   );
 }
