@@ -19,15 +19,15 @@ export default function UserActions({user}: Props) {
   const pathname = usePathname();
   const setParams = useParamsStore(state => state.setParams);
 
-//   function setWinner() {
-//     setParams({winner: user.username, seller: undefined})
-//     if (pathname !== '/') router.push('/');
-//   }
+  function setWinner() {
+    setParams({winner: user.username, seller: undefined})
+    if (pathname !== '/') router.push('/');
+  }
 
-//   function setSeller() {
-//     setParams({seller: user.username, winner: undefined})
-//     if (pathname !== '/') router.push('/');
-//   }
+  function setSeller() {
+    setParams({seller: user.username, winner: undefined})
+    if (pathname !== '/') router.push('/');
+  }
 
 
   return (
@@ -35,12 +35,12 @@ export default function UserActions({user}: Props) {
       inline
       label={`Welcome ${user.name}`}
     >
-      {/* <Dropdown.Item icon={HiUser} onClick={setSeller}>
+      <Dropdown.Item icon={HiUser} onClick={setSeller}>
           My Auctions
       </Dropdown.Item>
       <Dropdown.Item icon={AiFillTrophy} onClick={setWinner}>
           Auctions won
-      </Dropdown.Item> */}
+      </Dropdown.Item>
       <Dropdown.Item icon={AiFillCar}>
         <Link href='/auctions/create'>
           Sell my car
