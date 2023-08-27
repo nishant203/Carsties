@@ -1,11 +1,10 @@
 'use client'
 
-import { useParamsStore } from '../hooks/useParamsStore'
+import { useParamsStore } from '@/hooks/useParamsStore'
 import React from 'react'
 import Heading from './Heading'
 import { Button } from 'flowbite-react'
 import { signIn } from 'next-auth/react'
-// import { signIn } from 'next-auth/react'
 
 type Props = {
     title?: string

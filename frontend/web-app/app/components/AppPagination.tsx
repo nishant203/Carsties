@@ -10,7 +10,6 @@ type Props = {
 }
 
 export default function AppPagination({ currentPage, pageCount, pageChanged }: Props) {
-
     return (
         <Pagination
             currentPage={currentPage}
